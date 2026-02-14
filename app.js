@@ -4,13 +4,13 @@ const defaultData = {
   workOrders: [
     {
       id: crypto.randomUUID(),
-      title: "CRAC Unit #3 filter replacement",
+      title: "Hello Tony",
       priority: "High",
       status: "Open",
-      asset: "CRAC-03",
-      assignedTo: "J. Patel",
+      asset: "AI Engineer",
+      assignedTo: "R.thomp",
       dueDate: "2026-02-20",
-      description: "Increased pressure differential detected."
+      description: "Hello World"
     }
   ],
   maintenanceSheets: [
