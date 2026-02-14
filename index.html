@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Center Facilities Maintenance Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Data Center Facilities Maintenance Manager</h1>
+      <p>Track work orders, maintenance sheets, inventory, procurement, and critical operations for reliable facilities management.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Dashboard</h2>
+        <div class="dashboard-grid" id="dashboard"></div>
+      </section>
+
+      <section class="card">
+        <h2>Work Orders</h2>
+        <form id="workOrderForm" class="form-grid">
+          <input name="title" placeholder="Title" required />
+          <select name="priority" required>
+            <option value="">Priority</option>
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+            <option>Critical</option>
+          </select>
+          <select name="status" required>
+            <option value="">Status</option>
+            <option>Open</option>
+            <option>In Progress</option>
+            <option>On Hold</option>
+            <option>Completed</option>
+          </select>
+          <input name="asset" placeholder="Asset/System (e.g., UPS-A)" required />
+          <input name="assignedTo" placeholder="Assigned Technician" required />
+          <input name="dueDate" type="date" required />
+          <textarea name="description" placeholder="Issue description" required></textarea>
+          <button type="submit">Add Work Order</button>
+        </form>
+        <div class="table-wrap"><table id="workOrdersTable"></table></div>
+      </section>
+
+      <section class="card">
+        <h2>Maintenance Information Sheets</h2>
+        <form id="maintenanceForm" class="form-grid">
+          <input name="equipment" placeholder="Equipment" required />
+          <input name="frequency" placeholder="Frequency (e.g., Monthly)" required />
+          <input name="procedureRef" placeholder="Procedure Reference" required />
+          <input name="safetyNotes" placeholder="Safety Notes" required />
+          <input name="lastCompleted" type="date" required />
+          <input name="nextDue" type="date" required />
+          <button type="submit">Add Maintenance Sheet</button>
+        </form>
+        <div class="table-wrap"><table id="maintenanceTable"></table></div>
+      </section>
+
+      <section class="card">
+        <h2>Parts Inventory</h2>
+        <form id="partsForm" class="form-grid">
+          <input name="partName" placeholder="Part Name" required />
+          <input name="partNumber" placeholder="Part Number" required />
+          <input name="quantity" type="number" min="0" placeholder="Quantity" required />
+          <input name="minStock" type="number" min="0" placeholder="Min Stock" required />
+          <input name="location" placeholder="Storage Location" required />
+          <input name="vendor" placeholder="Preferred Vendor" required />
+          <button type="submit">Add Part</button>
+        </form>
+        <div class="table-wrap"><table id="partsTable"></table></div>
+      </section>
+
+      <section class="card">
+        <h2>Parts Ordering / Purchase Orders</h2>
+        <form id="ordersForm" class="form-grid">
+          <input name="poNumber" placeholder="PO Number" required />
+          <input name="part" placeholder="Part" required />
+          <input name="quantity" type="number" min="1" placeholder="Quantity" required />
+          <input name="vendor" placeholder="Vendor" required />
+          <input name="orderDate" type="date" required />
+          <select name="status" required>
+            <option value="">Order Status</option>
+            <option>Submitted</option>
+            <option>Approved</option>
+            <option>Shipped</option>
+            <option>Received</option>
+            <option>Cancelled</option>
+          </select>
+          <button type="submit">Create Order</button>
+        </form>
+        <div class="table-wrap"><table id="ordersTable"></table></div>
+      </section>
+
+      <section class="card">
+        <h2>Additional Facilities Management Modules</h2>
+        <form id="assetForm" class="form-grid">
+          <input name="assetId" placeholder="Asset ID" required />
+          <input name="assetType" placeholder="Type (Generator/CRAC/PDU)" required />
+          <input name="zone" placeholder="Zone / Room" required />
+          <input name="condition" placeholder="Condition" required />
+          <input name="lastInspection" type="date" required />
+          <input name="nextInspection" type="date" required />
+          <button type="submit">Add Asset Record</button>
+        </form>
+        <div class="table-wrap"><table id="assetsTable"></table></div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Data is stored in your browser (localStorage) for demo/prototyping.</small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
